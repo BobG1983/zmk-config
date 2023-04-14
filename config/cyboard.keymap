@@ -1,16 +1,38 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define DEFAULT 0
+#define NUM    1
+#define NAV    2
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
- &kp Q     &kp W     &kp E     &kp R    &kp T                                           &kp Y       &kp U      &kp I     &kp O     &kp P
- &kp A     &kp S     &kp D     &kp F    &kp G                                           &kp H       &kp J      &kp K     &kp L     &kp SQT
- &kp Z     &kp X     &kp C     &kp V    &kp B    &kp ESC &kp ESC        &kp ESC &kp ESC &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH
-           &kp ESC &kp ESC              &kp ESC  &kp ESC &kp ESC        &kp ESC &kp ESC &kp ESC                &kp ESC &kp ESC
+ &kp Q     &kp W     &kp E     &kp R    &kp T                                                                         &kp Y       &kp U      &kp I             &kp O     &kp P
+ &kp A     &kp S     &kp D     &kp F    &kp G                                                                         &kp H       &kp J      &kp K             &kp L     &kp SQT
+ &kp Z     &kp X     &kp C     &kp V    &kp B        &kp ESC        &kp ESC          &kp ESC      &kp ESC             &kp N       &kp M      &kp COMMA         &kp DOT   &kp FSLH
+           &kp LC(C) &kp LC(P)          &lt NUM SPC  &mt LSHIFT TAB &mt LCTRL LGUI   &mt LALT ESC &mt LSHIFT BSPC     &kp RET                &kp ESC           &kp ESC
+            >;
+        };
+        
+        numpad_layer {
+            bindings = <
+ &kp PLUS &kp N7     &kp N8     &kp N9    &kp MINUS                                                                    &kp Y       &kp U      &kp I             &kp O     &kp P
+ &kp STAR &kp N4     &kp N5     &kp N6    &kp FSLH                                                                     &kp H       &kp J      &kp K             &kp L     &kp SQT
+ &kp N0   &kp N1     &kp N2     &kp N3    &kp DOT     &kp ESC        &kp ESC          &kp ESC      &kp ESC             &kp N       &kp M      &kp COMMA         &kp DOT   &kp FSLH
+          &kp LC(C)  &kp LC(P)            &lt NUM SPC &mt LSHIFT TAB &kp EQUAL        &mt LALT ESC &mt LSHIFT BSPC     &kp RET                &kp ESC           &kp ESC
+            >;
+        };
+        
+        nav_layer {
+            bindings = <
+ &kp Q     &kp W     &kp E     &kp R    &kp T                                                                     &kp Y       &kp U      &kp I             &kp O     &kp P
+ &kp A     &kp S     &kp D     &kp F    &kp G                                                                     &kp H       &kp J      &kp K             &kp L     &kp SQT
+ &kp Z     &kp X     &kp C     &kp V    &kp B    &kp ESC        &kp ESC          &kp ESC      &kp ESC             &kp N       &kp M      &kp COMMA         &kp DOT   &kp FSLH
+           &kp LC(C) &kp LC(P)          &kp SPC  &mt LSHIFT TAB &mt LCTRL LGUI   &mt LALT ESC &mt LSHIFT BSPC     &kp RET                &kp ESC           &kp ESC
             >;
         };
     };

@@ -4,35 +4,71 @@
 #define DEFAULT 0
 #define NUM    1
 #define NAV    2
+#define SYM    3
+
 
 / {
+    behaviors {
+td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SQT>, <&kp SEMI>, <&kp COLON>;
+        };
+td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+        };
+    };
+td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(C)>, <&kp LC(X)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
- &kp Q     &kp W     &kp E     &kp R    &kp T                                                                         &kp Y       &kp U      &kp I             &kp O     &kp P
- &kp A     &kp S     &kp D     &kp F    &kp G                                                                         &kp H       &kp J      &kp K             &kp L     &kp SQT
- &kp Z     &kp X     &kp C     &kp V    &kp B        &kp ESC        &kp ESC          &kp ESC      &kp ESC             &kp N       &kp M      &kp COMMA         &kp DOT   &kp FSLH
-           &kp LC(C) &kp LC(P)          &lt NUM SPC  &mt LSHIFT TAB &mt LCTRL LGUI   &mt LALT ESC &mt LSHIFT BSPC     &kp RET                &kp ESC           &kp ESC
+ &kp Q     &kp W     &kp E     &kp R    &kp T                                                       &kp Y       &kp U      &kp I             &kp O     &kp P
+ &kp A     &kp S     &kp D     &kp F    &kp G                                                       &kp H       &kp J      &kp K             &kp L     &td0
+ &kp Z     &kp X     &kp C     &kp V    &kp B        &kp TAB   &mo SYM           &mo NAV  &mo NUM   &kp N       &kp M      &kp COMMA         &kp DOT   &td1
+           &td2      &kp LC(V)          &lt LSHIFT   &kp SPC   &kp LCTRL         &kp RET  &kp BSPC  &kp ESC                &kp LC(X)         &kp LC(V)
             >;
         };
         
         numpad_layer {
             bindings = <
- &kp PLUS &kp N7     &kp N8     &kp N9    &kp MINUS                                                                    &kp Y       &kp U      &kp I             &kp O     &kp P
- &kp STAR &kp N4     &kp N5     &kp N6    &kp FSLH                                                                     &kp H       &kp J      &kp K             &kp L     &kp SQT
- &kp N0   &kp N1     &kp N2     &kp N3    &kp DOT     &kp ESC        &kp ESC          &kp ESC      &kp ESC             &kp N       &kp M      &kp COMMA         &kp DOT   &kp FSLH
-          &kp LC(C)  &kp LC(P)            &lt NUM SPC &mt LSHIFT TAB &kp EQUAL        &mt LALT ESC &mt LSHIFT BSPC     &kp RET                &kp ESC           &kp ESC
+ &kp PLUS &kp N7      &kp N8     &kp N9    &kp MINUS                                                &kp Y     &kp U      &kp I             &kp O     &kp P
+ &kp STAR &kp N4      &kp N5     &kp N6    &kp FSLH                                                 &kp H     &kp J      &kp K             &kp L     &td0
+ &kp N0   &kp N1      &kp N2     &kp N3    &kp DOT     &kp TAB  &kp LGUI         &kp ESC  &mo NUM   &kp N     &kp M      &kp COMMA         &kp DOT   &td1
+          &kp EQUAL   &kp EQUAL            &kp LSHIFT  &kp SPC  &kp LCTRL        &kp RET  &kp BSPC  &kp ESC              &kp LC(X)         &kp LC(V)
             >;
         };
         
         nav_layer {
             bindings = <
- &kp Q     &kp W     &kp E     &kp R    &kp T                                                                     &kp Y       &kp U      &kp I             &kp O     &kp P
- &kp A     &kp S     &kp D     &kp F    &kp G                                                                     &kp H       &kp J      &kp K             &kp L     &kp SQT
- &kp Z     &kp X     &kp C     &kp V    &kp B    &kp ESC        &kp ESC          &kp ESC      &kp ESC             &kp N       &kp M      &kp COMMA         &kp DOT   &kp FSLH
-           &kp LC(C) &kp LC(P)          &kp SPC  &mt LSHIFT TAB &mt LCTRL LGUI   &mt LALT ESC &mt LSHIFT BSPC     &kp RET                &kp ESC           &kp ESC
+ &kp PLUS &kp N7      &kp N8     &kp N9    &kp MINUS                                                &kp Y     &kp U      &kp I             &kp O     &kp P
+ &kp STAR &kp N4      &kp N5     &kp N6    &kp FSLH                                                 &kp H     &kp J      &kp K             &kp L     &td0
+ &kp N0   &kp N1      &kp N2     &kp N3    &kp DOT     &kp TAB  &kp LGUI         &mo NAV  &kp ESC   &kp N     &kp M      &kp COMMA         &kp DOT   &td1
+          &td2        &kp EQUAL            &kp LSHIFT  &kp SPC  &kp LCTRL        &kp RET  &kp BSPC  &kp ESC              &kp LC(X)         &kp LC(V)
+            >;
+        };
+
+        sym_layer {
+            bindings = <
+ &kp PLUS &kp N7      &kp N8     &kp N9    &kp MINUS                                                &kp Y     &kp U      &kp I             &kp O     &kp P
+ &kp STAR &kp N4      &kp N5     &kp N6    &kp FSLH                                                 &kp H     &kp J      &kp K             &kp L     &td0
+ &kp N0   &kp N1      &kp N2     &kp N3    &kp DOT     &kp TAB  &kp LGUI         &kp ESC  &kp ESC   &kp N     &kp M      &kp COMMA         &kp DOT   &td1
+          &td2        &kp EQUAL            &kp LSHIFT  &kp SPC  &kp LCTRL        &kp RET  &kp BSPC  &kp ESC              &kp LC(X)         &kp LC(V)
             >;
         };
     };

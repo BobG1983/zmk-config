@@ -31,44 +31,72 @@ td2: tap_dance_2 {
             tapping-term-ms = <200>;
             bindings = <&kp LC(C)>, <&kp LC(X)>;
         };
-    
+td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(,)>, <&kp LS(.)>;
+        };
+td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+        };
+td5: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_5";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(LBKT)>, <&kp LS(RBKT)>;
+        };
+td5: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_6";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(N9)>, <&kp LS(N0)>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
- &kp Q     &kp W     &kp E     &kp R    &kp T                                                       &kp Y       &kp U      &kp I             &kp O     &kp P
- &kp A     &kp S     &kp D     &kp F    &kp G                                                       &kp H       &kp J      &kp K             &kp L     &td0
- &kp Z     &kp X     &kp C     &kp V    &kp B        &kp TAB   &mo SYM           &mo NAV  &mo NUM   &kp N       &kp M      &kp COMMA         &kp DOT   &td1
-           &td2      &kp LC(V)          &lt LSHIFT   &kp SPC   &kp LCTRL         &kp RET  &kp BSPC  &kp ESC                &kp LC(X)         &kp LC(V)
+ &kp Q     &kp W     &kp E     &kp R    &kp T                                                       &kp Y       &kp U  &kp I      &kp O     &kp P
+ &kp A     &kp S     &kp D     &kp F    &kp G                                                       &kp H       &kp J  &kp K      &kp L     &td0
+ &kp Z     &kp X     &kp C     &kp V    &kp B        &kp TAB   &kp LGUI          &mo NAV  &mo NUM   &kp N       &kp M  &kp COMMA  &kp DOT   &td1
+           &td2      &kp LC(V)          &lt LSHIFT   &kp SPC   &kp LCTRL         &kp ESC  &kp RET   &kp BSPC           &mo SYM    &mo SYM
             >;
         };
         
         numpad_layer {
             bindings = <
- &kp PLUS &kp N7      &kp N8     &kp N9    &kp MINUS                                                &kp Y     &kp U      &kp I             &kp O     &kp P
- &kp STAR &kp N4      &kp N5     &kp N6    &kp FSLH                                                 &kp H     &kp J      &kp K             &kp L     &td0
- &kp N0   &kp N1      &kp N2     &kp N3    &kp DOT     &kp TAB  &kp LGUI         &kp ESC  &mo NUM   &kp N     &kp M      &kp COMMA         &kp DOT   &td1
-          &kp EQUAL   &kp EQUAL            &kp LSHIFT  &kp SPC  &kp LCTRL        &kp RET  &kp BSPC  &kp ESC              &kp LC(X)         &kp LC(V)
+ &kp PLUS &kp N7      &kp N8     &kp N9    &kp MINUS                                        &none  &none  &none  &none  &none
+ &kp STAR &kp N4      &kp N5     &kp N6    &kp FSLH                                         &none  &none  &none  &none  &none
+ &kp N0   &kp N1      &kp N2     &kp N3    &kp DOT    &trans  &trans        &none  &mo NUM  &none  &none  &none  &none  &none
+          &kp EQUAL   &kp EQUAL            &trans     &trans  &trans        &none  &none    &none                &none  &none
             >;
         };
         
         nav_layer {
             bindings = <
- &kp PLUS &kp N7      &kp N8     &kp N9    &kp MINUS                                                &kp Y     &kp U      &kp I             &kp O     &kp P
- &kp STAR &kp N4      &kp N5     &kp N6    &kp FSLH                                                 &kp H     &kp J      &kp K             &kp L     &td0
- &kp N0   &kp N1      &kp N2     &kp N3    &kp DOT     &kp TAB  &kp LGUI         &mo NAV  &kp ESC   &kp N     &kp M      &kp COMMA         &kp DOT   &td1
-          &td2        &kp EQUAL            &kp LSHIFT  &kp SPC  &kp LCTRL        &kp RET  &kp BSPC  &kp ESC              &kp LC(X)         &kp LC(V)
+ &kp HOME &kp UP    &kp END    &kp PG_UP  &none                                                &none  &none  &none  &none  &none
+ &kp LEFT &kp DOWN  &kp RIGHT  &kp PG_DN  &none                                                &none  &none  &none  &none  &none
+ &none    &none     &none      &none      &none   &trans  &trans         &mo NAV  &none  &none  &none  &none  &none  &none
+          &td2      &kp LC(V)             &trans  &trans  &trans        &none    &none  &none         &none  &none
             >;
         };
 
         sym_layer {
             bindings = <
- &kp PLUS &kp N7      &kp N8     &kp N9    &kp MINUS                                                &kp Y     &kp U      &kp I             &kp O     &kp P
- &kp STAR &kp N4      &kp N5     &kp N6    &kp FSLH                                                 &kp H     &kp J      &kp K             &kp L     &td0
- &kp N0   &kp N1      &kp N2     &kp N3    &kp DOT     &kp TAB  &kp LGUI         &kp ESC  &kp ESC   &kp N     &kp M      &kp COMMA         &kp DOT   &td1
-          &td2        &kp EQUAL            &kp LSHIFT  &kp SPC  &kp LCTRL        &kp RET  &kp BSPC  &kp ESC              &kp LC(X)         &kp LC(V)
+ &kp GRAVE  &kp CARROT  &kp AMPS  &kp UNDER  &STAR                                               &none  &none  &none  &none  &none
+ &kp TILDE  &kp PIPE    &kp HASH  &kp AT     &EXCL                                               &none  &none  &none  &none  &none
+ &td3       &td4        &td5      &td6       &none   &trans  &trans         &none  &none  &none  &none  &none  &none  &none
+            &td2        &kp LC(V)            &trans  &trans  &trans         &none  &none  &none         &mo SYM  &mo SYM
             >;
         };
     };

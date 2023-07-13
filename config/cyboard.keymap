@@ -52,7 +52,7 @@ td5: tap_dance_5 {
             tapping-term-ms = <200>;
             bindings = <&kp LS(LBKT)>, <&kp LS(RBKT)>;
         };
-td5: tap_dance_6 {
+td6: tap_dance_6 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_6";
             #binding-cells = <0>;

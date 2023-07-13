@@ -23,7 +23,7 @@ td1: tap_dance_1 {
             tapping-term-ms = <200>;
             bindings = <&kp FSLH>, <&kp BSLH>;
         };
-    };
+    
 td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_2";
@@ -31,7 +31,7 @@ td2: tap_dance_2 {
             tapping-term-ms = <200>;
             bindings = <&kp LC(C)>, <&kp LC(X)>;
         };
-    };
+    
 
     keymap {
         compatible = "zmk,keymap";

@@ -69,7 +69,7 @@ td6: tap_dance_6 {
  &kp Q     &kp W     &kp E     &kp R    &kp T                                                       &kp Y       &kp U  &kp I      &kp O     &kp P
  &kp A     &kp S     &kp D     &kp F    &kp G                                                       &kp H       &kp J  &kp K      &kp L     &td0
  &kp Z     &kp X     &kp C     &kp V    &kp B        &kp TAB   &kp LGUI          &mo NAV  &mo NUM   &kp N       &kp M  &kp COMMA  &kp DOT   &td1
-           &td2      &kp LC(V)          &kp LSHIFT   &kp SPC   &kp LCTRL         &kp ESC  &kp RET   &kp BSPC           &mo SYM    &mo SYM
+           &td2      &kp LC(V)          &kp LSHIFT   &kp SPC   &kp LCTRL         &kp RET  &kp BSPC  &kp LSHIFT         &mo SYM    &mo ESC
             >;
         };
         

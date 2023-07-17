@@ -66,10 +66,10 @@ td6: tap_dance_6 {
 
         default_layer {
             bindings = <
- &kp Q     &kp W     &kp E     &kp R    &kp T                                                               &kp Y       &kp U  &kp I      &kp O     &kp P
- &kp A     &kp S     &kp D     &kp F    &kp G                                                               &kp H       &kp J  &kp K      &kp L     &td0
- &kp Z     &kp X     &kp C     &kp V    &kp B            &kp TAB       &kp LGUI          &mo NAV  &mo NUM   &kp N       &kp M  &kp COMMA  &kp DOT   &td1
-           &mo SYM   &mo SYM            &mt LSHIFT SPC   &lt NUM SPC   &kp LCTRL         &kp ESC  &kp RET   &mt LSHIFT BSPC    &mo NAV    &mo SYM
+ &kp Q     &kp W     &kp E     &kp R    &kp T                                                                   &kp Y       &kp U  &kp I      &kp O     &kp P
+ &kp A     &kp S     &kp D     &kp F    &kp G                                                                   &kp H       &kp J  &kp K      &kp L     &td0
+ &kp Z     &kp X     &kp C     &kp V    &kp B            &kp TAB       &kp LGUI          &td2     &kp LC(V)     &kp N       &kp M  &kp COMMA  &kp DOT   &td1
+           &mo SYM   &mo SYM            &mt LSHIFT SPC   &mo NAV TAB   &kp LCTRL         &kp ESC  &lt SYM RET   &mt LSHIFT BSPC    &mo NAV    &mo SYM
             >;
         };
         

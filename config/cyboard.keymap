@@ -66,10 +66,10 @@ td6: tap_dance_6 {
 
         default_layer {
             bindings = <
- &kp Q     &kp W     &kp E     &kp R    &kp T                                                                   &kp Y       &kp U  &kp I      &kp O     &kp P
- &kp A     &kp S     &kp D     &kp F    &kp G                                                                   &kp H       &kp J  &kp K      &kp L     &td0
+ &kp Q     &kp W     &kp E     &kp R    &kp T                                                               &kp Y       &kp U  &kp I      &kp O     &kp P
+ &kp A     &kp S     &kp D     &kp F    &kp G                                                               &kp H       &kp J  &kp K      &kp L     &td0
  &kp Z     &kp X     &kp C     &kp V    &kp B     &kp TAB          &kp LGUI          &td2     &kp LC(V)     &kp N       &kp M  &kp COMMA  &kp DOT   &td1
-           &mo SYM   &mo SYM            &kp SPC   &mt LSHIFT TAB   &kp LCTRL         &kp ESC  &lt NUM RET   &mt LSHIFT BSPC    &mo NAV    &mo SYM
+           &kp X     &kp C              &kp SPC   &mt LSHIFT TAB   &kp LCTRL         &kp ESC  &lt NUM RET   &mt LSHIFT BSPC    &mo NAV    &mo SYM
             >;
         };
         
@@ -87,7 +87,7 @@ td6: tap_dance_6 {
  &none    &kp HOME  &kp UP     &kp END    &kp PG_UP                                          &none  &none  &none  &none  &none
  &none    &kp LEFT  &kp DOWN   &kp RIGHT  &kp PG_DN                                          &none  &none  &none  &none  &none
  &none    &none     &none      &none      &none       &trans  &trans         &mo NAV  &none  &none  &none  &none  &none  &none
-          &mo SYM   &mo SYM               &trans      &trans  &trans         &none    &none  &none         &none  &none
+          &none     &none                 &trans      &trans  &trans         &none    &none  &none         &none  &none
             >;
         };
 
@@ -96,7 +96,7 @@ td6: tap_dance_6 {
  &kp GRAVE  &kp CARET   &kp AMPS  &kp UNDER  &kp STAR                                     &none  &none  &none  &none  &none
  &kp TILDE  &kp PIPE    &kp HASH  &kp AT     &kp EXCL                                     &none  &none  &none  &none  &none
  &td3       &td4        &td5      &td6       &none   &trans  &trans         &none  &none  &none  &none  &none  &none  &none
-            &mo SYM     &mo SYM              &trans  &trans  &trans         &none  &none  &none         &mo SYM  &mo SYM
+            &none       &none                &trans  &trans  &trans         &none  &none  &none         &mo SYM  &mo SYM
             >;
         };
     };
